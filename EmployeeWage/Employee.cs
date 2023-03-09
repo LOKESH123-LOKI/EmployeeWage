@@ -50,8 +50,9 @@ namespace EmployeeWage
         }
         public void wagesformonth()
         {
-            int totalsalary = 0;
-            for (int i = 0; i <= 20; i++)
+            int totalsalary = 0, DailyHours = 100;
+            for (int i = 0; i <= 20 && (DailyHours >=100); i++)
+
             {
                 Random random = new Random();
                int variable=random.Next(0,3);
