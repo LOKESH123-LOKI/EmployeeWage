@@ -9,7 +9,7 @@ namespace EmployeeWage
 {
    public class Employee
     {
-        const int IS_PRESENT = 1;
+        const int IS_PRESENT = 1, WagePerHour = 20, DailyHours = 8;
         public void attendance()
         {
             Random random = new Random();
@@ -19,6 +19,17 @@ namespace EmployeeWage
             else
                 Console.WriteLine("Employee is absent");
 
+        }
+        public void calculateWage()
+        {
+            int Salary = 0;
+          Random random= new Random();
+            int variable=random.Next(0,2);
+            if (variable == IS_PRESENT)
+                Salary = WagePerHour * DailyHours;
+            Console.WriteLine("Salary is");
+
+               
         }
     }
 }
