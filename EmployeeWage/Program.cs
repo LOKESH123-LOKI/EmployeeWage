@@ -10,6 +10,7 @@ namespace EmployeeWage
             employee.attendance();
             employee.calculateWage();
             employee.Parttimewage();
+            employee.wagesformonth();
         }
     }
 }

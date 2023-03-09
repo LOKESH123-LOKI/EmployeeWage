@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
+using System.Net.Security;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,7 +10,7 @@ namespace EmployeeWage
 {
    public class Employee
     {
-        const int IS_PRESENT = 1, WagePerHour = 20, DailyHours = 8, PartTimeHours = 8, IS_FULLTIME = 1, IS_HALFTIME = 2;
+        const int IS_PRESENT = 1, WagePerHour = 20, DailyHours = 8, PartTimeHours = 8, IS_FULLTIME = 1, IS_HALFTIME = 2, WagesForMonth = 20;
         public void attendance()
         {
             Random random = new Random();
@@ -46,6 +47,26 @@ namespace EmployeeWage
                     break;
             }
             Console.WriteLine("Salary is" + Salary);
+        }
+        public void wagesformonth()
+        {
+            int totalsalary = 0;
+            for (int i = 0; i <= 20; i++)
+            {
+                Random random = new Random();
+               int variable=random.Next(0,3);
+                switch (variable)
+                {
+                    case IS_FULLTIME:
+                        totalsalary+= WagePerHour * DailyHours;         
+                        break;
+                    case IS_HALFTIME:
+                        totalsalary+= (WagePerHour / 2) * DailyHours;
+                        break;
+                }
+
+            }
+            Console.WriteLine(totalsalary);
 
 
 
