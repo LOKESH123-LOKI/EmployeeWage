@@ -9,7 +9,7 @@ namespace EmployeeWage
 {
    public class Employee
     {
-        const int IS_PRESENT = 1, WagePerHour = 20, DailyHours = 8;
+        const int IS_PRESENT = 1, WagePerHour = 20, DailyHours = 8, PartTimeHours = 8, IS_FULLTIME = 1, IS_HALFTIME = 2;
         public void attendance()
         {
             Random random = new Random();
@@ -27,9 +27,25 @@ namespace EmployeeWage
             int variable=random.Next(0,2);
             if (variable == IS_PRESENT)
                 Salary = WagePerHour * DailyHours;
-            Console.WriteLine("Salary is");
+            Console.WriteLine("Salary is"+Salary);
 
                
+        }
+        public void Parttimewage()
+        {
+            int Salary = 0;
+            Random random = new Random();
+            int variable=random.Next(0,3);
+            if (variable == IS_FULLTIME)
+                Salary = WagePerHour * DailyHours;
+            if (variable == IS_HALFTIME)
+                Salary = (WagePerHour / 2) * DailyHours;
+            Console.WriteLine("Salary is" + Salary);
+
+
+
+
+
         }
     }
 }
